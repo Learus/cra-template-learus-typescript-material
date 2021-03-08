@@ -1,26 +1,54 @@
 {
   "name": "cra-template-learus-typescript-material",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.3.0",
+  "license": "MIT",
+  "author": "Learus",
+  "main": "template.json",
+  "description": "Boilerplate for Create React App Typescript template with Material-UI and component creation snippets",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "cra-template",
+    "template",
+    "typescript",
+    "material",
+    "material-ui",
+    "react-router-dom"
+  ],
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "",
+    "directory": "/"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "@types/jest": "^26.0.15",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.7",
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "NODE_ENV=production react-scripts start",
+    "build": "NODE_ENV=production react-scripts build",
+    "dev": "NODE_ENV=development react-scripts start",
+    "clean": "rm -rf ./template",
+    "copy": "./copy.sh",
+    "prepublishOnly": "npm run clean && npm run copy"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +67,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest",
+    "access": "public"
   }
 }
